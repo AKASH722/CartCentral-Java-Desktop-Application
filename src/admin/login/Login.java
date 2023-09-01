@@ -12,9 +12,9 @@ public class Login extends Application {
         FXMLLoader fxmlLoader= new FXMLLoader(Login.class.getResource("Login.fxml"));
         Scene scene= new Scene(fxmlLoader.load());
         stage.setTitle("Admin");
+        stage.setResizable(false);
         stage .setScene(scene);
         stage.show();
-
     }
 
     public static void main(String[] args) {
