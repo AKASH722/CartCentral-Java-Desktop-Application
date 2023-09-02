@@ -7,6 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jbr-17.0" level="application" />
+    <orderEntry type="library" exported="" name="jbr-17.0" level="application" />
+    <orderEntry type="library" exported="" name="scenebuilder-20.0.0-all" level="project" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="mysql-connector-j-8.1.0" level="application" />
   </component>
 </module>
