@@ -1,0 +1,6 @@
+.my-anchorpane {
+    -fx-background-color: grey;
+
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
