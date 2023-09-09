@@ -5,22 +5,25 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable {
+public class CustomerSignUpController implements Initializable {
       @FXML
       TextField Country;
     @FXML
-    TextField mobileNO;
+    TextField username ;
+
     @FXML
     TextField emailadd;
     @FXML
     TextField Password;
       @FXML
-    TextField username;
+      TextField mobileNO;
+
       @FXML
       Label top;
       @FXML
@@ -50,8 +53,15 @@ public class SignUpController implements Initializable {
     };
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        username.requestFocus();
+        ListView<String> customListView = new ListView<>();
+        customListView.setMaxHeight(100);
+
+
          countryChoiceBox.getItems().addAll(countries);
          countryChoiceBox.setOnAction(this::getCurrentCountryName);
+        countryChoiceBox.setPrefHeight(10);
+
 
     }
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.login.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.login.CustomerController">
    <children>
       <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" styleClass="my-anchorpane" stylesheets="@anchorfile.css" AnchorPane.bottomAnchor="-2.0">
          <children>
@@ -48,7 +48,7 @@
                </font>
             </Label>
             <PasswordField fx:id="password" layoutX="257.0" layoutY="217.0" promptText="Use a strong password" />
-            <Button layoutX="184.0" layoutY="275.0" mnemonicParsing="false" onAction="#SignupButton" prefHeight="26.0" prefWidth="72.0" text="Login" />
+            <Button layoutX="184.0" layoutY="275.0" mnemonicParsing="false" onAction="#getuserdata" prefHeight="26.0" prefWidth="72.0" text="Login" />
             <Button layoutX="302.0" layoutY="275.0" mnemonicParsing="false" onAction="#SignupButton" prefHeight="26.0" prefWidth="72.0" text="SignUp" />
 
          </children>

@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Controller {
+public class CustomerController {
     @FXML
     TextField username;
     @FXML
@@ -20,17 +20,39 @@ public class Controller {
     @FXML
     TextField password;
 
-    public void getuserdata()
+    public void getuserdata(ActionEvent event)
     {
-      String usernm =  username.getText();
-      String pwd  = password.getText();
-        System.out.println("username : " + usernm + " pwd : " + pwd);
+//      String usernm =  username.getText();
+//      String pwd  = password.getText();
+//      System.out.println("username : " + usernm + " pwd : " + pwd);
+        try {
+            // Load the CustomerSignUp.fxml file
+            Parent root = FXMLLoader.load(getClass().getResource("CustomerAccount.fxml"));
+
+            // Create a new stage for the SignUp view
+            Stage stage = new Stage();
+            stage.setTitle("Sign Up"); // Set the title for the new window
+            stage.setScene(new Scene(root));
+
+            // Close the current (login) window
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+            // Show the SignUp window
+            stage.show();
+        }
+        catch (IOException e )
+        {
+            System.out.println("exception occured");
+        }
+
+
     }
      public void SignupButton(ActionEvent event)
      {
          try {
-             // Load the SignUp.fxml file
-             Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+             // Load the CustomerSignUp.fxml file
+             Parent root = FXMLLoader.load(getClass().getResource("CustomerSignUp.fxml"));
 
              // Create a new stage for the SignUp view
              Stage stage = new Stage();
