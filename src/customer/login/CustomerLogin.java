@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 
-public class Login extends Application {
+public class CustomerLogin extends Application {
     public static void main(String[] args) {
         System.out.println("hello ");
         launch(args);
@@ -21,7 +21,7 @@ public class Login extends Application {
        Scene scene ;
        Parent root;
 
-        URL url = getClass().getResource("Login.fxml");
+        URL url = getClass().getResource("CustomerLogin.fxml");
         try {
             if(url != null)
             {
@@ -32,8 +32,8 @@ public class Login extends Application {
                 stage.setScene(scene);
                stage.setTitle("Login");
 //                System.out.println("got the controller");
-              Controller controller = loader.getController();
-               controller.getuserdata();
+//              CustomerController controller = loader.getController();
+//               controller.getuserdata();
             }
         }
         catch(NullPointerException e)
@@ -41,6 +41,9 @@ public class Login extends Application {
             System.out.println("url not found");
             System.out.println(url);
         }
+
+
+
      stage.show();
     }
 }
