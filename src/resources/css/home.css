@@ -1,0 +1,11 @@
+.label {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+#internalPane {
+    -fx-background-color: #AEA083;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+    -fx-text-fill: black;
+}

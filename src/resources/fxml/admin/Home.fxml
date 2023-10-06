@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminLoginController">
+   <children>
+      <Button layoutX="246.0" layoutY="321.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="96.0" text="Logout" textFill="#0d4056de">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="94.0" layoutY="110.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="152.0" text="View All Order">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="94.0" layoutY="230.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="152.0" text="View User">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="94.0" layoutY="170.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="152.0" text="View Merchant">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="330.0" layoutY="110.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="152.0" text="Add Category">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="326.0" layoutY="170.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Generate Report">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="326.0" layoutY="231.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="160.0" text="Discount">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="140.0" layoutY="23.0" text="Welcome :- ">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Text fx:id="MYTEXT" layoutX="294.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="139.962890625">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
