@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminCategoryController">
+<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../css/anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminCategoryController">
     <BorderPane fx:id="internalPane" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
         <StackPane.margin>
             <Insets />
@@ -47,13 +47,13 @@
         <center>
             <AnchorPane prefHeight="275.0" prefWidth="580.0" BorderPane.alignment="CENTER">
                 <children>
-                    <Label layoutX="22.0" prefHeight="42.0" prefWidth="203.0" stylesheets="@Label.css" text="Sub-Category Name" textFill="WHITE">
+                    <Label layoutX="22.0" prefHeight="42.0" prefWidth="203.0" stylesheets="@../../css/Label.css" text="Sub-Category Name" textFill="WHITE">
                         <font>
                             <Font size="22.0" />
                         </font>
                     </Label>
                     <TextField fx:id="sub_name" layoutX="240.0" layoutY="6.0" prefHeight="30.0" prefWidth="189.0" />
-                    <Label layoutX="22.0" layoutY="56.0" prefHeight="42.0" prefWidth="216.0" stylesheets="@Label.css" text="Category Name" textFill="WHITE">
+                    <Label layoutX="22.0" layoutY="56.0" prefHeight="42.0" prefWidth="216.0" stylesheets="@../../css/Label.css" text="Category Name" textFill="WHITE">
                         <font>
                             <Font size="22.0" />
                         </font>
@@ -64,7 +64,7 @@
                             <Font size="18.0" />
                         </font>
                     </Button>
-                    <Label layoutX="22.0" layoutY="116.0" prefHeight="42.0" prefWidth="216.0" stylesheets="@Label.css" text="Admin Name" textFill="WHITE">
+                    <Label layoutX="22.0" layoutY="116.0" prefHeight="42.0" prefWidth="216.0" stylesheets="@../../css/Label.css" text="Admin Name" textFill="WHITE">
                         <font>
                             <Font size="22.0" />
                         </font>

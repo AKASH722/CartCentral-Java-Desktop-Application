@@ -26,7 +26,16 @@
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </FlowPane.margin>
                     </Button>
-               <Button alignment="CENTER" layoutX="376.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAccount" prefHeight="20.0" prefWidth="90.0" text="Account" />
+               <Button alignment="CENTER" layoutX="255.0" layoutY="77.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickViewCart" prefHeight="20.0" prefWidth="90.0" text="View Cart">
+                  <FlowPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </FlowPane.margin>
+               </Button>
+               <Button alignment="CENTER" layoutX="310.0" layoutY="77.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickViewOrder" prefHeight="20.0" prefWidth="90.0" text="View Orders">
+                  <FlowPane.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </FlowPane.margin>
+               </Button>
                     <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickLogout" prefHeight="20.0" prefWidth="90.0" text="Logout">
                         <FlowPane.margin>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

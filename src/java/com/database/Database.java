@@ -1,5 +1,7 @@
 package com.database;
 
+import com.Records.CartProducts;
+import com.Records.Orders;
 import com.Records.Products;
 import com.Records.User;
 
@@ -167,5 +169,174 @@ public class Database {
         }
         return false;
 
+    }
+
+    public boolean hasEnoughProducts(Long selectedProduct, Integer quantity) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT stock FROM products WHERE productId=?");
+            preparedStatement.setLong(1,selectedProduct);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next()) {
+                return rs.getInt("stock") >= quantity;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public void addToCart(Long selectedProduct, Integer quantity, Long userId) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cart(userId, productId, quantity) VALUES(?,?,?)");
+            preparedStatement.setLong(1,userId);
+            preparedStatement.setLong(2,selectedProduct);
+            preparedStatement.setInt(3,quantity);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void getCart(ArrayList<CartProducts> productList, Long userId) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM cart INNER JOIN products ON cart.productId = products.productId WHERE userId = ?");
+            preparedStatement.setLong(1,userId);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                productList.add(new CartProducts(rs.getLong("productid"), rs.getString("productName"), rs.getString("description"), rs.getDouble("price"), rs.getInt("quantity")));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public boolean hasEnoughProductInCart(Long selectedProduct, Integer quantity, Long userID) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT quantity FROM cart WHERE productId = ?  AND userId = ?");
+            preparedStatement.setLong(1,selectedProduct);
+            preparedStatement.setLong(2,userID);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next()) {
+                return rs.getInt("quantity") > quantity;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public void minusCartQuantity(Long selectedProduct, Integer quantity, Long userID) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE cart SET quantity = (quantity - ?) WHERE productId = ? AND userId = ?");
+            preparedStatement.setInt(1,quantity);
+            preparedStatement.setLong(2,selectedProduct);
+            preparedStatement.setLong(3,userID);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void removeProductFromCart(Long selectedProduct, Long userID) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE  FROM cart WHERE productId = ? AND userId = ?");
+            preparedStatement.setLong(1,selectedProduct);
+            preparedStatement.setLong(2,userID);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public boolean checkQuantity(Long productId, int quantity) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT stock FROM products WHERE productId = ?");
+            preparedStatement.setLong(1,productId);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next()) {
+                return rs.getInt("stock") >= quantity;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            return false;
+        }
+    }
+
+    public Integer getOrdersCount() {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) FROM orders");
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next()) {
+               return rs.getInt(1);
+            }
+            return 0;
+        } catch (SQLException e) {
+           return 0;
+        }
+    }
+
+    public void addToOrder(Long productId, int quantity, String orderNumber, Long userId, double price) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO orders(orderNumber, userId, productId, quantity, price) VALUES(?,?,?,?,?)");
+            preparedStatement.setString(1,orderNumber);
+            preparedStatement.setInt(2,quantity);
+            preparedStatement.setLong(3,productId);
+            preparedStatement.setLong(4,userId);
+            preparedStatement.setDouble(5,price);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void minusQuantity(Long aLong, int quantity) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE products SET stock = (stock - ?) WHERE productId = ?");
+            preparedStatement.setInt(1,quantity);
+            preparedStatement.setLong(2,aLong);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void getAllOrders(ArrayList<Orders> ordersArrayList, Long userId) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                "SELECT orderID, userID, orderNumber, productID, quantity, price, orderDate, orderStatus " +
+                    "FROM orders " +
+                    "WHERE userID = ?"
+            );
+            preparedStatement.setLong(1, userId);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                long orderId = rs.getLong("orderID");
+                long userIdFromDB = rs.getLong("userID");
+                String orderNumber = rs.getString("orderNumber");
+                long productId = rs.getLong("productID");
+                int quantity = rs.getInt("quantity");
+                double price = rs.getDouble("price");
+                Date orderDate = rs.getDate("orderDate");
+                String orderStatus = rs.getString("orderStatus");
+
+                // Create an Orders instance
+                Orders order = new Orders(
+                    orderId,
+                    userIdFromDB,
+                    productId, // Assuming you have a constructor in Products that accepts productID
+                    quantity,
+                    orderNumber,
+                    orderDate,
+                    orderStatus,
+                    price
+                );
+                // Add the created Orders instance to the list
+                ordersArrayList.add(order);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

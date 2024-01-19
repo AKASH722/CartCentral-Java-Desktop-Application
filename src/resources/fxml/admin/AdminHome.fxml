@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminHomeController">
-    <BorderPane fx:id="internalPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@anchorfile.css" StackPane.alignment="CENTER">
+<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../css/anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminHomeController">
+    <BorderPane fx:id="internalPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/anchorfile.css" StackPane.alignment="CENTER">
         <StackPane.margin>
             <Insets />
         </StackPane.margin>
@@ -17,7 +17,7 @@
                     <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickCategory" prefHeight="40.0" prefWidth="110.0" text="Category">
                         <FlowPane.margin>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </FlowPane.margin>
+                        </FlowPane.margin>i8
                     </Button>
                     <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSubCategory" prefHeight="40.0" prefWidth="138.0" text="Sub-Category">
                         <FlowPane.margin>
@@ -30,17 +30,6 @@
                         </FlowPane.margin>
                     </Button>
                     <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickLogout" prefHeight="40.0" prefWidth="110.0" text="Logout">
-                        <FlowPane.margin>
-                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </FlowPane.margin>
-                    </Button>
-                    <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickViewOrders" prefHeight="40.0" prefWidth="110.0" text="View All oders">
-                        <FlowPane.margin>
-                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </FlowPane.margin>
-                    </Button>
-               <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickUsers" prefHeight="40.0" prefWidth="144.0" text="View Users" textAlignment="CENTER" />
-                    <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onClickViewMerchant" prefHeight="40.0" prefWidth="110.0" text="View Merchant" textAlignment="CENTER">
                         <FlowPane.margin>
                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                         </FlowPane.margin>

@@ -13,9 +13,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminLoginController">
     <children>
-        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" styleClass="my-anchorpane" stylesheets="@anchorfile.css" AnchorPane.bottomAnchor="-2.0">
+        <AnchorPane layoutX="2.0" layoutY="2.0" prefHeight="400.0" prefWidth="600.0" styleClass="my-anchorpane" stylesheets="@../../css/anchorfile.css" AnchorPane.bottomAnchor="-2.0">
             <children>
-                <Label fx:id="welcomelabel" alignment="CENTER" layoutX="11.0" layoutY="32.0" prefHeight="18.0" prefWidth="573.0" styleClass="my-label" stylesheets="@Label.css" text="Welcome to CartCentral" textFill="#fffafa">
+                <Label fx:id="welcomelabel" alignment="CENTER" layoutX="11.0" layoutY="32.0" prefHeight="18.0" prefWidth="573.0" styleClass="my-label" stylesheets="@../../css/Label.css" text="Welcome to CartCentral" textFill="#fffafa">
                     <font>
                         <Font size="14.0" />
                     </font>

@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminCategoryController">
-    <BorderPane fx:id="internalPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@anchorfile.css" StackPane.alignment="CENTER">
+<StackPane fx:id="homePane" maxHeight="Infinity" maxWidth="Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../css/anchorfile.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.admin.AdminCategoryController">
+    <BorderPane fx:id="internalPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../css/anchorfile.css" StackPane.alignment="CENTER">
         <StackPane.margin>
             <Insets />
         </StackPane.margin>

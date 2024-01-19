@@ -1,11 +1,13 @@
 .my-anchorpane {
-    -fx-background-color: #AEA083;
+    -fx-background-color: #aea083;
     -fx-border-width: 2px;
     -fx-padding: 10px;
-    -fx-text-fill: black;
 }
-
-
+.root{
+    -fx-background-color: #424242;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+}
 /*Cool Gray: #808080*/
 
 /*Slate Gray: #708090*/
